@@ -1,1 +1,22 @@
-alert("JavaScript works!");
+// alert("JavaScript works!");
+
+
+var consultWithWife = function (atHome, goodMood) {
+	var looksFavorable = (atHome && goodMood);
+	
+	if (looksFavorable) {
+		console.log("I probably have a good chance of convincing her to buy it.");
+	} else {
+		console.log("It's easier to beg forgiveness than ask permission.");
+	};
+	
+	return looksFavorable;
+};
+
+var goLookOrGoHome = consultWithWife(true, true);
+
+console.log(goLookOrGoHome);
+
+var testString = "I love oatmeal raisin cookies";
+
+console.log(testString.length);
