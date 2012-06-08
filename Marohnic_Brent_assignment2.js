@@ -1,3 +1,6 @@
+// Brent Marohnic
+// Created for Scalable Data Infrastructures
+// Term: 1206
 // alert("JavaScript works!");
 
 var string1 = "I'm not good ",
@@ -6,7 +9,8 @@ var string1 = "I'm not good ",
 	
 var fromFunWithStrings,
 	fromYearlyPaymentBreakdown,
-	fromConsultWithWife;
+	fromConsultWithWife,
+	fromCrazyArrays=[];
 
 var consultWithWife = function (atHome, goodMood) {
 	var looksFavorable = (atHome && goodMood);
@@ -63,3 +67,30 @@ var funWithStrings = function (firstString, secondString, thirdString, someBoole
 };
 
 fromFunWithStrings = funWithStrings(string1, string2, string3, fromConsultWithWife);
+
+var newArray = [fromFunWithStrings, fromYearlyPaymentBreakdown, fromConsultWithWife];
+
+var crazyArrays = function (someArray, someNumber) {
+
+	var newArray2 = [];
+	
+	if (someNumber > 2) {
+		someNumber = 2;
+	} else {
+			if (someNumber < 0) {
+			someNumber = 0;
+			};
+	};
+	
+	for (var x = 0; x < someNumber; x++) {
+	
+		newArray2[x] = someArray[x];
+	
+	};
+	
+	return newArray2;
+};
+
+fromCrazyArrays = crazyArrays(newArray, 6);
+
+console.log(fromCrazyArrays);
