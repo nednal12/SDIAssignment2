@@ -1,5 +1,12 @@
 // alert("JavaScript works!");
 
+var string1 = "I'm not good ",
+	string2 = "at string manipulation. ",
+	string3 = "At least not yet.";
+	
+var fromFunWithStrings,
+	fromYearlyPaymentBreakdown,
+	fromConsultWithWife;
 
 var consultWithWife = function (atHome, goodMood) {
 	var looksFavorable = (atHome && goodMood);
@@ -13,15 +20,14 @@ var consultWithWife = function (atHome, goodMood) {
 	return looksFavorable;
 };
 
-var goLookOrGoHome = consultWithWife(true, true);
-
-console.log(goLookOrGoHome);
+fromConsultWithWife = consultWithWife(true, true);
 
 
-var figureOutPayments = function (totPrice, taxRate, numberOfPayments) {
+var yearlyPaymentBreakdown = function (totPrice, taxRate, numberOfPayments) {
 
 	var remainingAmount = totPrice * (1 + taxRate),
-		paymentAmount = remainingAmount / numberOfPayments;
+		paymentAmount = remainingAmount / numberOfPayments,
+		goodThruNums = 1;
 	
 	while ( remainingAmount > paymentAmount ) {
 		
@@ -37,6 +43,23 @@ var figureOutPayments = function (totPrice, taxRate, numberOfPayments) {
 	
 	};
 
+	return goodThruNums;
+	
 };
 
-figureOutPayments(5000, 0.07, 60);
+fromYearlyPaymentBreakdown = yearlyPaymentBreakdown(5000, 0.07, 60);
+
+var funWithStrings = function (firstString, secondString, thirdString, someBoolean) {
+
+	var goodThruStrings = 'Yes';
+	
+	if (someBoolean) {
+	
+		console.log(firstString + secondString + thirdString);
+	
+	};
+	 
+	return goodThruStrings;
+};
+
+fromFunWithStrings = funWithStrings(string1, string2, string3, fromConsultWithWife);
