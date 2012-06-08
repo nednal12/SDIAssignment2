@@ -18,16 +18,25 @@ var goLookOrGoHome = consultWithWife(true, true);
 console.log(goLookOrGoHome);
 
 
-var sendEncryptedText = function (textMessage, encrypt) {
-	var i = textMessage.length,
-		textMessage2 = textMessage;
-		 
-	if (encrypt) {
-		
-		textMessage2[1] = 'a';
-	};
-	console.log(textMessage2);
-	
-};					// ends sendEncryptedText
+var figureOutPayments = function (totPrice, taxRate, numberOfPayments) {
 
-sendEncryptedText('I love you dear', true);
+	var remainingAmount = totPrice * (1 + taxRate),
+		paymentAmount = remainingAmount / numberOfPayments;
+	
+	while ( remainingAmount > paymentAmount ) {
+		
+		remainingAmount -= paymentAmount;
+		var isItAFullYear = numberOfPayments % 12;
+		
+		if (isItAFullYear === 0) {
+			console.log("There goes another " + 
+			paymentAmount + " only " + remainingAmount + " to go");
+		};
+		
+		numberOfPayments--;
+	
+	};
+
+};
+
+figureOutPayments(5000, 0.07, 60);
